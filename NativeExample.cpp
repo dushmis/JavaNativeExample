@@ -10,7 +10,7 @@ JNIEXPORT void JNICALL Java_NativeExample_callMe
 
 JNIEXPORT void JNICALL Java_NativeExample_printf
 (JNIEnv *env, jobject job, jstring jstring){
-const char *nativeString = env->GetStringUTFChars(jstring,0);
-std::cout<<nativeString<<std::endl;
-env->ReleaseStringUTFChars(jstring, nativeString);
+  const char *nativeString = env->GetStringUTFChars(jstring,0);
+  std::cout<<nativeString<<std::endl;
+  env->ReleaseStringUTFChars(jstring, nativeString);
 }
