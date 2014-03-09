@@ -3,9 +3,6 @@
 
 using namespace std;
 
-int main(){
-  std::cout<<"Hello .."<<std::endl;
-}
 
 JNIEXPORT void JNICALL Java_NativeExample_callMe
 (JNIEnv *env, jobject jobj){
