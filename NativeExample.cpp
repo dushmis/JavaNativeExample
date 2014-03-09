@@ -3,9 +3,32 @@
 
 using namespace std;
 
+int main(){
+  std::cout<<"Hello .."<<std::endl;
+}
+
 JNIEXPORT void JNICALL Java_NativeExample_callMe
 (JNIEnv *env, jobject jobj){
   std::cout<<"Hello .."<<std::endl;
+  jclass classObject = env->FindClass("Abc");
+  if(classObject==0){
+    std::cout<<"couldn't find class"<<std::endl;
+  }else{
+    std::cout<<"found class"<<std::endl;
+  }
+
+  jmethodID constructor = env->GetMethodID(classObject,"<init>","()V");
+  jobject object = env->NewObject(classObject, constructor);
+
+  jmethodID method1Object = env->GetMethodID(classObject,"method1","(I)V");
+  if(method1Object==0){
+    std::cout<<"coudn't find method"<<std::endl;
+  }else{
+    std::cout<<"found method"<<std::endl;
+  }
+  object = env->NewObject(classObject, method1Object,2);
+
+
 }
 
 JNIEXPORT void JNICALL Java_NativeExample_printf
