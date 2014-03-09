@@ -3,6 +3,7 @@ public class NativeExample{
     System.loadLibrary("NativeExample");
   }
   public static void main(String... args){
+    // System.out.println(System.getProperty("java.library.path"));
     NativeExample exam=new NativeExample();
     exam.callMe();
     exam.printf("Hi from c++");
