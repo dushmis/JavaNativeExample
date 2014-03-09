@@ -14,11 +14,11 @@ JNIEXPORT void JNICALL Java_NativeExample_callMe
     std::cout<<"found class"<<std::endl;
   }
 
-  // use javap -s Abc to find methog signatures
+  // use javap -s Abc to find method signatures
   jmethodID constructor = env->GetMethodID(classObject,"<init>","()V");
   jobject object = env->NewObject(classObject, constructor);
 
-  // use javap -s Abc to find methog signatures
+  // use javap -s Abc to find method signatures
   jmethodID method1Object = env->GetMethodID(classObject,"method1","(I)V");
   if(method1Object==0){
     std::cout<<"coudn't find method"<<std::endl;
